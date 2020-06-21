@@ -19,6 +19,7 @@
 
 .yllw{
     color: #EEC648;
+    padding: 20px 0 20px 20px;
 }
 
 .badge{
@@ -44,9 +45,40 @@
 
 nav{
     padding-left: 30px;
+    padding-right: 30px;
 }
 
 .container{
     background-color: #111;
-    height: 95vh;
+    height: 98vh;
 }
+
+.bg-dark{
+    display: flex;
+    justify-content: space-between;
+}
+.box{
+    display: block;
+}
+
+  #login .logContainer #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+
+  #signup .logContainer #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 350px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+  }
+  #login .logContainer #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login .logContainer #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  }
