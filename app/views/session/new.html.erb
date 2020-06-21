@@ -1,15 +1,15 @@
-<h1>Sign In</h1>
+<h1 class="yllw">Sign In</h1>
 
 <% if flash[:error].present? %>
-  <h2><%= flash[:error] %></h2>
+  <h2 class="yllw"><%= flash[:error] %></h2>
 <% end %>
 
 <%= form_tag login_path do%>
-  <%= label_tag :email %>
+  <%= label_tag :email, "Email:", :class => "yllw" %>
   <%= email_field_tag :email %>
 
-  <%= label_tag :password %>
+  <%= label_tag :password, "Password:", :class => "yllw" %>
   <%= password_field_tag :password %>
 
-  <%= submit_tag "Sign in" %>
+  <%= submit_tag "Sign in", :class => "btn btn-outline-success my-2 my-sm-0" %>
 <% end %>

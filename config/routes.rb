@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  
-  get 'favorites/new'
+
   root :to => 'pages#home'
   resources :users
 
@@ -9,5 +8,6 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
 
   resources :favorites
+  resources :movies, only: [:index, :show]
   
 end

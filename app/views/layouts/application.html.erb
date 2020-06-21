@@ -4,26 +4,17 @@
     <title>ImdbProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <nav>
-      <%= link_to 'Home', root_path %>
-
-      <% if @current_user.present? %>
-        <% if @current_user.admin? %>
-          <%= link_to 'All users', users_path %>
-        <% end %>
-        <%= link_to "Log out #{ @current_user.email }", login_path, :method => 'delete' %>
-      <% else %>
-        <%= link_to 'Sign up', new_user_path %>
-        <%= link_to 'Sign in', login_path %>
-      <% end %>
-
-    </nav>
-    <%= yield %>
+    <div class="container">
+      <%= render 'layouts/header' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

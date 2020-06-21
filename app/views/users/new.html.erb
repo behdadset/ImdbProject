@@ -1,22 +1,22 @@
-<h1>New User</h1>
+<h1 class="yllw">New User</h1>
 
 <% if @user.errors.any? %>
   <ul>
     <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <li class="yllw"><%= msg %></li>
     <% end %>
   </ul>
 <% end %>
 
 <%= form_for @user do |f| %>
-  <%= f.label :email %>
+  <%= f.label :email,'Email:', :class => "yllw" %>
   <%= f.email_field :email %>
 
-  <%= f.label :password %>
+  <%= f.label :password,'Password:', :class => "yllw" %>
   <%= f.password_field :password %>
 
-  <%= f.label :password_confirmation %>
+  <%= f.label :password_confirmation,'Confirm Password:', :class => "yllw" %>
   <%= f.password_field :password_confirmation %>
 
-  <%= f.submit "Sign up" %>
+  <%= f.submit "Sign up", :class => "btn btn-outline-success my-2 my-sm-0" %>
 <% end %>

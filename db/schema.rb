@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_06_19_124810) do
   create_table "movies", force: :cascade do |t|
     t.text "title"
     t.text "poster"
-    t.float "rate"
+    t.string "rate"
     t.string "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

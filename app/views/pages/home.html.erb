@@ -1,8 +1,30 @@
-<h1>IMDB</h1>
-<p>Enjoy searching your movies from Imdb.</p>
+<h1 class="yllw">BMDB</h1>
+<p class="yllw">Enter movie name:</p>
 
-<% if @current_user.present? %>
-  <marquee>
-    <h2>WELCOME BACK <%= @current_user.email %></h2>
-  </marquee>
-<% end %>
+  
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <div class="contain">
+    <br/>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <form class="card card-sm">
+          <div class="card-body row no-gutters align-items-center">
+            <div class="col-auto">
+              <i class="fas fa-search h4 text-body"></i>
+              </div>
+                <!--end of col-->
+                <div class="col">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </div>
+                <!--end of col-->
+                <div class="col-auto">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </div>
+                <!--end of col-->
+              </div>
+        </form>
+      </div>
+      <!--end of col-->
+      </div>
+  </div>

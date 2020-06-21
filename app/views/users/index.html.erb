@@ -1,6 +1,8 @@
-<h1>All Users</h1>
+<h1 class="yllw">All Users</h1>
 
 <% @users.each do |user| %>
-  <p><%= user.email %></p>
-  <%= link_to 'Delete user', user, :method => 'delete' %>
+  <div class="inline_block">
+    <p class="yllw"><%= user.email %></p>
+    <%= link_to 'Delete user', user, :method => 'delete', :class => "btn btn-outline-success my-2 my-sm-0" %>
+  </div>
 <% end %>
