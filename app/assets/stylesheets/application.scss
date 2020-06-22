@@ -12,6 +12,8 @@
  *
  */
  @import "bootstrap";
+ 
+
 
  body {
 	background: black;
@@ -81,4 +83,9 @@ nav{
   }
   #login .logContainer #login-row #login-column #login-box #login-form #register-link {
     margin-top: -85px;
+  }
+
+  .home{
+    display: inline-block;
+    margin: 0 auto;
   }
