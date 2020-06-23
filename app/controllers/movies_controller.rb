@@ -1,16 +1,14 @@
 class MoviesController < ApplicationController
   def index
-    @movies = get_poster_by_title(params[:title])
-    hash = ImdbService.new
+    @movies = get_data_by_title(params[:title])
+    
     # @movie.image = hash.get_poster_by_title("Guardians of the Galaxy Vol. 2")
 
   end
 
   def show
-    @movie = Movie.get_image_by_title("Guardians of the Galaxy Vol. 2")
-    @movie.poster = hash.get_image_by_title(@movie.title)
-    @review = Review.new
-    @reviews = @movie.reviews
+    @movie = get_movie_by_title(params[:id])
+   
   end
 
   def movie_params
@@ -20,17 +18,32 @@ class MoviesController < ApplicationController
   private
 
   def get_year_by_title(title)
-    response = HTTParty.get("http://www.omdbapi.com/?s=#{title}&apikey=3e9bc519")
+    response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
     response.parsed_response['Year']
   end
 
   def get_rate_by_title(title)
-    response = HTTParty.get("http://www.omdbapi.com/?s=#{title}&apikey=3e9bc519")
+    response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
     response.parsed_response['imdbRating']
   end
 
   def get_poster_by_title(title)
-    response = HTTParty.get("http://www.omdbapi.com/?s=#{title}&apikey=3e9bc519")
+    response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
+    response.parsed_response['Poster']
+  end
+
+  def get_title_by_title(title)
+    response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
+    response.parsed_response['Title']
+  end
+
+  def get_data_by_title(title)
+    response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
     response.parsed_response['Search']
+  end
+
+  def get_movie_by_title(title)
+    response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&t=#{title}")
+    response.parsed_response
   end
 end

@@ -1,5 +1,7 @@
 <% @movies.each do |movie| %>
   
-  <%= image_tag movie["Poster"], :class => 'thumb' if movie["Poster"].present? && movie["Poster"] != "N/A"%>
+  <% if movie["Poster"].present? && movie["Poster"] != "N/A" %>
+    <%=link_to image_tag(movie["Poster"], :class => 'thumb'), movie_path(movie["Title"]) %>
+  <% end %>
   
 <% end %>
