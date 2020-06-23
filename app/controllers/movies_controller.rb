@@ -17,26 +17,6 @@ class MoviesController < ApplicationController
 
   private
 
-  def get_year_by_title(title)
-    response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
-    response.parsed_response['Year']
-  end
-
-  def get_rate_by_title(title)
-    response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
-    response.parsed_response['imdbRating']
-  end
-
-  def get_poster_by_title(title)
-    response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
-    response.parsed_response['Poster']
-  end
-
-  def get_title_by_title(title)
-    response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
-    response.parsed_response['Title']
-  end
-
   def get_data_by_title(title)
     response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
     response.parsed_response['Search']

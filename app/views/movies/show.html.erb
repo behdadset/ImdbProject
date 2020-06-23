@@ -1,39 +1,42 @@
-<div class="panel panel-default">
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-4">
-                <%= image_tag @movie["Poster"] %>
-                <div class="star-rating"></div>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                            <tr>
-                                <td class="td"><strong>Title:</strong></td>
-                                <td class="td"><%= @movie["Title"] %></td>
-                            </tr>
-                            <tr>
-                                <td class="td"><strong>Year:</strong></td>
-                                <td class="td"><%= @movie["Year"] %></td>
-                            </tr>
-                            <tr>
-                                <td class="td"><strong>Rating:</strong></td>
-                                <td class="td"><%= @movie["imdbRating"] %></td>
-                            </tr>
-                            </tbody>
-                        </table>
+<div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-10">
+                    <%= image_tag @movie["Poster"] %>
+                    <div class="star-rating"></div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td class="td"><strong>Title:</strong></td>
+                                    <td class="td"><%= @movie["Title"] %></td>
+                                </tr>
+                                <tr>
+                                    <td class="td"><strong>Year:</strong></td>
+                                    <td class="td"><%= @movie["Year"] %></td>
+                                </tr>
+                                <tr>
+                                    <td class="td"><strong>Rating:</strong></td>
+                                    <td class="td"><%= @movie["imdbRating"] %></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="td"><%= @movie["Plot"] %></div>
                     </div>
-                    <div class="td"><%= @movie["Plot"] %></div>
                 </div>
-                
             </div>
-            
         </div>
-        
+   
+
     </div>
-    
+    <div class="td col-sm-5" >
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
 </div>
-
-
-
-<%= link_to 'Back', movies_path %>
 

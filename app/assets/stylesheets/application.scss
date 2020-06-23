@@ -13,8 +13,6 @@
  */
  @import "bootstrap";
  
-
-
  body {
 	background: black;
 }
@@ -56,7 +54,7 @@ nav{
 
 .container{
     background-color: #111;
-    height: 98vh;
+    min-height: 98vh;
 }
 
 .bg-dark{
@@ -98,4 +96,9 @@ nav{
     display: block;
     margin-top: 30px;
     
+  }
+
+  .thumb{
+    
+    margin: 30px;
   }
