@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_06_19_124810) do
   enable_extension "plpgsql"
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
+    t.text "user_id"
     t.text "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

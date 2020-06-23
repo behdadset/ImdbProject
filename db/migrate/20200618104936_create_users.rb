@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.text :email
       t.text :first_name
       t.text :last_name
-      t.text :favorite
 
       t.timestamps
     end

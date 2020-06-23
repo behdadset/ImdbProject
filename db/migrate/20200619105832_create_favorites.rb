@@ -2,7 +2,7 @@ class CreateFavorites < ActiveRecord::Migration[5.2]
   def change
     create_table :favorites do |t|
       t.text :user_email
-      t.text :title
+      t.text :movie_title
 
       t.timestamps
     end
