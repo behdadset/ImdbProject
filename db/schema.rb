@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_06_19_124810) do
   enable_extension "plpgsql"
 
   create_table "favorites", force: :cascade do |t|
-    t.text "user_id"
+    t.integer "user_id"
     t.text "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_06_19_124810) do
   create_table "movies", force: :cascade do |t|
     t.text "title"
     t.text "poster"
-    t.string "rate"
+    t.float "rate"
     t.string "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,9 +1,19 @@
 class FavoritesController < ApplicationController
   before_action :check_for_login
 
-  def new
-    @favorite = Favorite.new
+  def add
+    favorite = Favorite.new :title => params["movie_title"]
+    @current_user.favorites << favorite
+    redirect_back :fallback_location => movies_path
   end
+
+  def remove
+    
+    fav = Favorite.find_by(:title => params["movie_title"])
+    @current_user.favorites.find(fav.id).destroy
+    redirect_back :fallback_location => movies_path
+  end
+
 
   def create
     

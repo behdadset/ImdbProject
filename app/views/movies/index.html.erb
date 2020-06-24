@@ -3,6 +3,8 @@
   <% @movies.each do |movie| %>
     <% if movie["Poster"].present? && movie["Poster"] != "N/A" %>
       <%=link_to image_tag(movie["Poster"], :class => 'thumb'), movie_path(movie["Title"]) %>
+    <% else %>
+      <%=link_to "#{movie['Title']}", movie_path(movie["Title"]) %>
     <% end %>
   <% end %>
 <% else %>
