@@ -8,7 +8,6 @@ class FavoritesController < ApplicationController
   end
 
   def remove
-    
     fav = Favorite.find_by(:title => params["movie_title"])
     @current_user.favorites.find(fav.id).destroy
     redirect_back :fallback_location => movies_path

@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  
   def index
     @movies = get_data_by_title(params[:title])
     
@@ -8,8 +9,9 @@ class MoviesController < ApplicationController
 
   def show
     @movie = get_movie_by_title(params[:id])
-    @liked = @current_user.favorites.exists?(:title => @movie["Title"]) 
-   
+    if @current_user 
+      @liked = @current_user.favorites.exists?(:title => @movie["Title"]) 
+    end
   end
 
   def movie_params
