@@ -14,7 +14,8 @@
  @import "bootstrap";
  
  body {
-	background: black;
+  background-image: url("/assets/Marvel-Featured.jpg");
+	
 }
 
 .yllw{
@@ -55,6 +56,8 @@ nav{
 .container{
     background-color: #111;
     min-height: 98vh;
+    box-shadow: 5px 10px 10px 10px black;
+    opacity: 0.95;
 }
 
 .bg-dark{
@@ -95,7 +98,6 @@ nav{
   .centre{
     display: block;
     margin-top: 30px;
-    
   }
 
   .thumb{
@@ -107,4 +109,7 @@ nav{
     margin-top: -390px;
   }
 
+  .comment{
+    resize: none;
+  }
   

@@ -38,12 +38,18 @@
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </div>
     <div class="td col-sm-5" >
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <% if @current_user.present? %>
+        <form (action="add" controller="comments")>
+          <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea maxlength="250" class="comment form-control" rows="5" id="comment"></textarea>
+          </div>
+          <%= button_to "Submit", class: "favIcon", controller: "favorites", action: "add", :movie_title => @movie["Title"] %>
+        </form>
+      <% end %>
     </div>
   </div>
 </div>
-

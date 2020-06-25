@@ -1,0 +1,9 @@
+<h1 class="yllw">My list</h1>
+
+<% @list.each do |movie| %>
+  <div class="inline_block">
+    
+    <%=link_to movie.title, movie_path(movie.title) %>
+    
+  </div>
+<% end %>

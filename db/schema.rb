@@ -22,8 +22,20 @@ ActiveRecord::Schema.define(version: 2020_06_19_124810) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "favorites_movies", id: false, force: :cascade do |t|
     t.integer "favorite_id"
+    t.integer "movie_id"
+  end
+
+  create_table "comments_movies", id: false, force: :cascade do |t|
+    t.integer "comment_id"
     t.integer "movie_id"
   end
 
