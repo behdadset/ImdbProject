@@ -1,0 +1,9 @@
+<h1 class="yllw">All Comments</h1>
+
+<% @comments.each do |c| %>
+  <div class="inline_block cBox">
+    <p class="yllw"><%= c.title %></p>
+    <p class="yllw"><%= c.content %></p>
+    <%= link_to "Delete", comments_admin_index_path(c.id), :method => "delete" %>
+  </div>
+<% end %>

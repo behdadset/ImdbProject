@@ -2,8 +2,9 @@ class CommentsController < ApplicationController
   before_action :check_for_login
 
   def remove
-    comm = Comment.find_by(:title => params["movie_title"])
-    @current_user.comments.find(comm.id).destroy
+    comment = Comment.all.find_by(params[:id])
+    raise "hell"
+    comment.destroy
     redirect_back :fallback_location => movies_path
   end
 

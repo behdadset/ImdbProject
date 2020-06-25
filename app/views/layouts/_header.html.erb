@@ -4,6 +4,7 @@
         <% if @current_user.present? %>
             <% if @current_user.admin? %>
                 <%= link_to 'All users', users_path, class: "badge badge-ligh" %>
+                <%= link_to "Comments", comments_admin_index_path, class: "badge badge-ligh" %>
             <% end %>
             <%= link_to "My List", my_list_index_path, class: "badge badge-ligh" %>
             <%= link_to "Log out #{ @current_user.email }", login_path, :method => 'delete', class: "badge badge-ligh" %>

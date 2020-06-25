@@ -2,8 +2,6 @@
 
 <% @list.each do |movie| %>
   <div class="inline_block">
-    
     <%=link_to movie.movie_title, movie_path(movie.movie_title) %>
-    
   </div>
 <% end %>
