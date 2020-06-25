@@ -13,6 +13,8 @@ class MoviesController < ApplicationController
       @liked = @current_user.favorites.exists?(:movie_title => @movie["Title"]) 
     end
     @comment = Comment.new
+    @comments = Comment.all.where(:title => params["id"])
+    @users = User.all
   end
 
   def movie_params
