@@ -8,13 +8,15 @@ Here is a link to the IMDB Project: [IMDB Project](https://behdadimdb.herokuapp.
 Here you can see some functionalities that I used in this project:
 
 - CSS
+- MVC
 - Html
 - JQuery
+- Heroku
+- Bootstrap
 - JavaScript
 - Ruby on rails
-- Heroku
 - Github version controling
-- MVC
+
 
 ![IMDB Project](app/assets/images/ScreenShot.png)
 
