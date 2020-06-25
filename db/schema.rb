@@ -10,39 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_19_124810) do
+ActiveRecord::Schema.define(version: 2020_06_25_040724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "favorites", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
     t.integer "user_id"
     t.text "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
-    t.text "title"
+    t.text "movie_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "favorites_movies", id: false, force: :cascade do |t|
+    t.integer "movie_id"
     t.integer "favorite_id"
-    t.integer "movie_id"
-  end
-
-  create_table "comments_movies", id: false, force: :cascade do |t|
-    t.integer "comment_id"
-    t.integer "movie_id"
   end
 
   create_table "movies", force: :cascade do |t|
     t.text "title"
     t.text "poster"
-    t.float "rate"
+    t.string "rate"
     t.string "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_06_19_124810) do
     t.text "email"
     t.text "first_name"
     t.text "last_name"
-    t.text "favorite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

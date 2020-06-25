@@ -17,13 +17,13 @@ class CommentsController < ApplicationController
 
   def create
     
-    comment = Comment.create comment_params
+    comment = Comment.new comment_params
     @current_user.comments << comment
-    redirect_to root_path
+    redirect_back :fallback_location => movies_path
   end
 
   private
   def comment_params
-    params.require(:comment).permit(:title)
+    params.require(:comment).permit(:content, :title)
   end
 end

@@ -9,9 +9,10 @@ class MoviesController < ApplicationController
 
   def show
     @movie = get_movie_by_title(params[:id])
-    if @current_user 
-      @liked = @current_user.favorites.exists?(:title => @movie["Title"]) 
+    if @current_user.present?
+      @liked = @current_user.favorites.exists?(:movie_title => @movie["Title"]) 
     end
+    @comment = Comment.new
   end
 
   def movie_params

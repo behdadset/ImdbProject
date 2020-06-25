@@ -41,15 +41,25 @@
       </div>
     </div>
     <div class="td col-sm-5" >
+      <div>
+        <p class="comments"><strong>User</strong></p>
+        <p class="comments">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+      </div>
       <% if @current_user.present? %>
-        <form (action="add" controller="comments")>
-          <div class="form-group">
+        <%= form_for @comment do |f| %>
+          <%= f.label :content %>
+          <%= f.text_area :content %>
+          <%= f.hidden_field :title, value: @movie["Title"] %>
+          <%= f.submit %>
+          
+          <!--<div class="form-group">
             <label for="comment">Comment:</label>
-            <textarea maxlength="250" class="comment form-control" rows="5" id="comment"></textarea>
+            <textarea maxlength="250" class="commentBox form-control" rows="5" id="comment"></textarea>
           </div>
-          <%= button_to "Submit", class: "favIcon", controller: "favorites", action: "add", :movie_title => @movie["Title"] %>
-        </form>
+          <%= button_to "Submit", class: "favIcon", controller: "favorites", action: "add", :movie_title => @movie["Title"] %> -->
+        <% end %>
       <% end %>
     </div>
   </div>
 </div>
+

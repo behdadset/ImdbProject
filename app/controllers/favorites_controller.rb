@@ -2,14 +2,14 @@ class FavoritesController < ApplicationController
   before_action :check_for_login
 
   def add
-    favorite = Favorite.new :title => params["movie_title"]
+    favorite = Favorite.new :movie_title => params["movie_title"]
     @current_user.favorites << favorite
     redirect_back :fallback_location => movies_path
   end
 
   def remove
-    fav = Favorite.find_by(:title => params["movie_title"])
-    @current_user.favorites.find(fav.id).destroy
+    fav = Favorite.find_by(:movie_title => params["movie_title"])
+    @current_user.favorites.destroy fav.id
     redirect_back :fallback_location => movies_path
   end
 
@@ -23,6 +23,6 @@ class FavoritesController < ApplicationController
 
   private
   def favorite_params
-    params.require(:favorite).permit(:title)
+    params.require(:favorite).permit(:movie_title, :user_id)
   end
 end
