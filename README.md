@@ -5,7 +5,7 @@ Here is a link to the IMDB Project: [IMDB Project](https://behdadimdb.herokuapp.
 
 
 ## Functionalities
-Here you can see some functionalities that I used in this project.
+Here you can see some functionalities that I used in this project:
 
 - CSS
 - Html
@@ -16,6 +16,7 @@ Here you can see some functionalities that I used in this project.
 - Github version controling
 - MVC
 
+![IMDB Project](app/assets/images/ScreenShot.png)
 
 ## How this Website is working.
 > The Website has different modes, if you are a guest you have least accebility to the website. You can search movies and see the details of the movie also other users comments.
