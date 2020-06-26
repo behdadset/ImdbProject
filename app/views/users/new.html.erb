@@ -1,3 +1,5 @@
+<%# Sign up page and controlling if there is any error. %>
+
 <% if @user.errors.any? %>
   <ul>
     <% @user.errors.full_messages.each do |msg| %>

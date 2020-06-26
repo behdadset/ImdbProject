@@ -1,14 +1,7 @@
 class CommentsController < ApplicationController
   before_action :check_for_login
 
-  def remove
-    comment = Comment.all.find_by(params[:id])
-    raise "hell"
-    comment.destroy
-    redirect_back :fallback_location => movies_path
-  end
-
-
+  # Creating comments by users
   def create
     comment = Comment.new comment_params
     @current_user.comments << comment

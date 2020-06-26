@@ -1,18 +1,20 @@
 class MoviesController < ApplicationController
   
+  # Finding a move by title name which is a primary key in this API
   def index
     @movies = get_data_by_title(params[:title])
-    
-    # @movie.image = hash.get_poster_by_title("Guardians of the Galaxy Vol. 2")
-
   end
+
 
   def show
     @movie = get_movie_by_title(params[:id])
     if @current_user.present?
+      # Check for favorite situation
       @liked = @current_user.favorites.exists?(:movie_title => @movie["Title"]) 
     end
+    # Adding Comment
     @comment = Comment.new
+    # Reading all of the comments
     @comments = Comment.all.where(:title => params["id"])
     @users = User.all
   end
@@ -23,6 +25,7 @@ class MoviesController < ApplicationController
 
   private
 
+  # JSON Parsing
   def get_data_by_title(title)
     response = HTTParty.get("http://www.omdbapi.com/?apikey=#{Rails.application.secrets.omdbKey}&s=#{title}")
     response.parsed_response['Search']

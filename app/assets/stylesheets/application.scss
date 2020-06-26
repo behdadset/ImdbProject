@@ -15,7 +15,6 @@
  
  body {
   background-image: url("/assets/Marvel-Featured.jpg");
-	
 }
 
 .yllw{
@@ -36,7 +35,6 @@
 .form-control-borderless {
     border: none;
 }
-
 .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
     border: none;
     outline: none;
@@ -68,61 +66,60 @@ nav{
     display: block;
 }
 
-  #login .logContainer #login-row #login-column #login-box {
-    margin-top: 120px;
-    max-width: 600px;
-    height: 320px;
-    border: 1px solid #9C9C9C;
-    background-color: #EAEAEA;
-  }
+#login .logContainer #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#signup .logContainer #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 350px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#login .logContainer #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .logContainer #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
 
-  #signup .logContainer #login-row #login-column #login-box {
-    margin-top: 120px;
-    max-width: 600px;
-    height: 350px;
-    border: 1px solid #9C9C9C;
-    background-color: #EAEAEA;
-  }
-  #login .logContainer #login-row #login-column #login-box #login-form {
-    padding: 20px;
-  }
-  #login .logContainer #login-row #login-column #login-box #login-form #register-link {
-    margin-top: -85px;
-  }
+.home{
+  display: inline-block;
+  margin: 0 auto;
+}
 
-  .home{
-    display: inline-block;
-    margin: 0 auto;
-  }
+.centre{
+  display: block;
+  margin-top: 30px;
+}
 
-  .centre{
-    display: block;
-    margin-top: 30px;
-  }
+.thumb{
+  margin: 30px;
+}
 
-  .thumb{
-    margin: 30px;
-  }
+.favIcon{
+  height: 4%;
+  margin-top: -390px;
+}
 
-  .favIcon{
-    height: 4%;
-    margin-top: -390px;
-  }
+.commentBox{
+  resize: none;
+  margin-bottom: 20px;
+}
 
-  .commentBox{
-    resize: none;
-    margin-bottom: 20px;
-  }
-  
-  .comments{
-    color: white;
-  }
+.comments{
+  color: white;
+}
 
-  .strong{
-    font-weight: bold;
-  }
+.strong{
+  font-weight: bold;
+}
 
-  .cBox{
-    border: 1px solid #9C9C9C;
-    max-width: 300px;
-  }
+.cBox{
+  border: 1px solid #9C9C9C;
+  max-width: 300px;
+}

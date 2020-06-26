@@ -1,5 +1,6 @@
 <h1 class="yllw">My list</h1>
 
+<%# Showing all of the user favorite list. %>
 <% @list.each do |movie| %>
   <div class="inline_block">
     <%=link_to movie.movie_title, movie_path(movie.movie_title) %>

@@ -7,10 +7,12 @@ class ApplicationController < ActionController::Base
       session[:user_id] = nil unless @current_user.present?
     end
   
+    # Check if the user is admin or not
     def check_for_login
       redirect_to login_path unless @current_user.present?
     end
-  
+    
+    # Function to check if the user is signed in or not
     def check_for_admin
       redirect_to root_path unless @current_user.present? && @current_user.admin?
     end

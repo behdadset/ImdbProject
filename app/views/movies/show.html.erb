@@ -1,3 +1,4 @@
+<%# Showing movie page %>
 <div>
   <div class="row">
     <div class="col-sm-6">
@@ -41,6 +42,7 @@
       </div>
     </div>
     <div class="td col-sm-5" >
+      <%# Showing all available comments for the movie. %>
       <div>
         <% if @comments.present? %>
           <% @comments.each do |c| %>
@@ -51,6 +53,7 @@
           <% end %>
         <% end %>
       </div>
+      <%# Adding new comment for the movie if you are signed in. %>
       <% if @current_user.present? %>
         <%= form_for @comment do |f| %>
           <%= f.label :Comments %>
