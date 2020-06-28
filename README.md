@@ -35,3 +35,7 @@ Here you can see some functionalities that I used in this project:
 This Website is made by Behdad Setoodegan. You can contact me through email.
 behdadsetoodeagn@gmail.com
 
+## To-Do list:
+- In soon future I have plan to add request controllrer to prevent fake requests from Api.
+- Make the website more mobile user friendly.
+- Adding delete comments button for each user.
